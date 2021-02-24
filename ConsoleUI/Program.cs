@@ -17,11 +17,48 @@ namespace ConsoleUI
             //GetAllBrand();
             //CollorsAdd();
             //CarsAdd();
-            
-            CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var item in carManager.GetCarDetails())
+            //GetCarDetail();
+            //UsersAdd();
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            List<Customer> customers = new List<Customer> {
+                new Customer{Id=1,UserId=1,CompanyName="Zeynel'in şirketi"},
+                new Customer{Id=2,UserId=2,CompanyName="Zeyn'in şirketi"},
+                new Customer{Id=3,UserId=3,CompanyName="Zey'in şirketi"},
+                new Customer{Id=4,UserId=3,CompanyName="Zey'in 2. şirketi"},
+
+              
+
+            };
+            foreach (var item in customers)
             {
-                Console.WriteLine(item.BrandName +" /"+ item.CarName +" /"+item.ColorName+" /"+ item.DailyPrice);
+                customerManager.AddCustomer(item);
+                Console.WriteLine("işlem tamam");
+            }
+
+        }
+
+        private static void UsersAdd()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            List<User> users = new List<User> {
+                new User{Id=1,Email="1@gmail.com",FirstName="Zeynel",LastName="Ok",Password="12"},
+                new User{Id=2,Email="2@gmail.com",FirstName="Zeyn",LastName="Okk",Password="13"},
+                new User{Id=3,Email="3@gmail.com",FirstName="Zey",LastName="Okkk",Password="14"},
+
+            };
+            foreach (var item in users)
+            {
+                userManager.AddUser(item);
+                Console.WriteLine("işlem tamam");
+            }
+        }
+
+        private static void GetCarDetail()
+        {
+            CarManager carManager = new CarManager(new EfCarDal());
+            foreach (var item in carManager.GetCarDetails().Data)
+            {
+                Console.WriteLine(item.BrandName + " /" + item.CarName + " /" + item.ColorName + " /" + item.DailyPrice);
             }
         }
 
@@ -62,7 +99,7 @@ namespace ConsoleUI
         private static void GetAllBrand()
         {
             BrandManager brandManager = new BrandManager(new EfBrandDal());
-            foreach (var item in brandManager.GetAll())
+            foreach (var item in brandManager.GetAll().Data)
             {
                 Console.WriteLine(item.BrandName);
             }
@@ -97,7 +134,7 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new InMemoryCarDal());
 
-            foreach (var item in carManager.GetAll())
+            foreach (var item in carManager.GetAll().Data)
             {
                 Console.WriteLine(item.ModelYear);
             }
