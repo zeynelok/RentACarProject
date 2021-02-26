@@ -19,6 +19,7 @@ namespace Core.Utilities.Interceptors
             classAttributes.AddRange(methodAttributes);
 
             return classAttributes.OrderBy(x => x.Priority).ToArray();
+
         }
     }
 }
