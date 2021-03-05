@@ -36,8 +36,7 @@ namespace Business.Constants
         public static string RentalsListed = "Kiralama İşlemleri Listelendi";
         public static string RentalInValid = "Araç Şuan Mevcut Değil";
 
-
-
-
+        public static string CarImageLimitExceeded="5 adetten fazla fotoğraf eklenemez";
+        public static string CarImagesAdded="Foroğraflar eklendi";
     }
 }
