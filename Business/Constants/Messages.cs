@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace Business.Constants
@@ -38,5 +39,7 @@ namespace Business.Constants
 
         public static string CarImageLimitExceeded="5 adetten fazla fotoğraf eklenemez";
         public static string CarImagesAdded="Foroğraflar eklendi";
+
+        public static string  AuthorizationDenied="Yetkiniz Yok";
     }
 }

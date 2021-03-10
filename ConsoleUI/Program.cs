@@ -37,21 +37,21 @@ namespace ConsoleUI
 
         }
 
-        private static void UsersAdd()
-        {
-            UserManager userManager = new UserManager(new EfUserDal());
-            List<User> users = new List<User> {
-                new User{Id=1,Email="1@gmail.com",FirstName="Zeynel",LastName="Ok",Password="12"},
-                new User{Id=2,Email="2@gmail.com",FirstName="Zeyn",LastName="Okk",Password="13"},
-                new User{Id=3,Email="3@gmail.com",FirstName="Zey",LastName="Okkk",Password="14"},
+        //private static void UsersAdd()
+        //{
+        //    UserManager userManager = new UserManager(new EfUserDal());
+        //    List<User> users = new List<User> {
+        //        new User{Id=1,Email="1@gmail.com",FirstName="Zeynel",LastName="Ok",Password="12"},
+        //        new User{Id=2,Email="2@gmail.com",FirstName="Zeyn",LastName="Okk",Password="13"},
+        //        new User{Id=3,Email="3@gmail.com",FirstName="Zey",LastName="Okkk",Password="14"},
 
-            };
-            foreach (var item in users)
-            {
-                userManager.AddUser(item);
-                Console.WriteLine("işlem tamam");
-            }
-        }
+        //    };
+        //    foreach (var item in users)
+        //    {
+        //        userManager.AddUser(item);
+        //        Console.WriteLine("işlem tamam");
+        //    }
+        //}
 
         private static void GetCarDetail()
         {
